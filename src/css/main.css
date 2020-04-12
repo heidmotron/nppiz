@@ -3,30 +3,122 @@
  */
 @import 'imports/reset.css';
 
+/* Color Theme Swatches in Hex */
+:root {
+  --wilderness-1: #F2F2F2; 
+  --wilderness-2: #A6A6A6;
+  --wilderness-3: #595959;
+  --wilderness-4: #262626;
+  --wilderness-5: #0D0D0D;
+  --wilderness-6: rgb(3.138733%,57.649231%,59.999084%);
+}
+
 /*
   Or add your statements here:
  */
 body {
   font-size: calc(10px + 1vmin);
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans',
+  font-family: 'Noto Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans',
     'Droid Sans', 'Helvetica Neue', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  background-color: #282c34;
-  color: white;
+  /* justify-content: center; */
+  background-color: #FFF;
+  color: var(--wilderness-5);
 }
 
 a {
-  color: pink;
-  text-decoration: none;
+  color: var(--wilderness-5);
+  font-weight: bold;
+  text-decoration: underline;
+  font-size: 14px;
 }
 
-.content {
-  padding: 0 32px;
+.content, .left, .right {
+  grid-column: content;
+}
+
+header, footer {
+  display: grid;
+  grid-template-columns: [left-gutter] 1fr [content] 12fr [right-gutter] 1fr;
+  padding: 30px 0 10px 0;
+}
+
+header .content, footer .content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+footer a {
+  color: #FFF;
+}
+
+main {
+  display: grid;
+}
+
+section {
+  display: grid;
+  grid-template-columns: [left-gutter] 1fr [content] 12fr [right-gutter] 1fr;
+  text-align: left;
+  padding: 20px 0 20px 0;
+}
+
+section img {
+  width: 100%;
+  object-fit: contain;
+  object-position: center;
+}
+
+h1 {
+  font-size: 40px;
+  line-height: 1;
+  padding-bottom: 20px;
+  text-align: left;
+}
+
+h2 {
+  font-size: 36px;
+  line-height: 1.2;
+}
+
+p {
+  padding-bottom: 20px;
+  font-size: 16px;
+}
+
+ul {
+  list-style-position: inside;
+  line-height: 1.2;
+  padding-bottom: 20px;
+}
+
+@media (min-width: 768px) {
+  header, footer .content {
+    width: 680px;
+    margin: 0 auto;
+  }
+
+  section {
+    max-width: 100%;
+  }
+
+  main {
+    max-width: 680px;
+    margin: 0 auto;
+  }
+
+  section.two-column {
+    display: grid;
+    grid-template-columns: [left-gutter] 1fr [left-content] 6fr [right-content] 6fr [right-gutter] 1fr;
+  }
+  
+  section.two-column .left {
+    grid-column: left-content;
+  }
+  
+  section.two-column .right {
+    grid-column: right-content;
+  }
 }
