@@ -65,6 +65,8 @@ section {
   padding: 20px 0 20px 0;
 }
 
+
+
 section img {
   width: 100%;
   object-fit: contain;
@@ -95,8 +97,8 @@ ul {
 }
 
 @media (min-width: 768px) {
-  header, footer .content {
-    width: 680px;
+  header, footer {
+    max-width: 1290px;
     margin: 0 auto;
   }
 
@@ -104,9 +106,18 @@ ul {
     max-width: 100%;
   }
 
+  h1 {
+    font-size: 60px;
+    text-align: center;
+  }
+
   main {
-    max-width: 680px;
+    max-width: 1290px;
     margin: 0 auto;
+  }
+
+  section.hero {
+    padding: 60px;
   }
 
   section.two-column {
@@ -122,3 +133,14 @@ ul {
     grid-column: right-content;
   }
 }
+
+
+
+
+/* Color Theme Swatches in Hex */
+.MAXIM-DOCENT-1-hex { color: #F2B705; }
+.MAXIM-DOCENT-2-hex { color: #F29D35; }
+.MAXIM-DOCENT-3-hex { color: #F2E8DF; }
+.MAXIM-DOCENT-4-hex { color: #F29863; }
+.MAXIM-DOCENT-5-hex { color: #F24C27; }
+
